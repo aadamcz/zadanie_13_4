@@ -1,4 +1,5 @@
 var OSInfo = require("../modules/OSInfo");
+var TimeConverter = require("../modules/getTimeConverter");
 
 process.stdin.setEncoding("utf-8");
 process.stdin.on("readable", function() {
@@ -13,12 +14,14 @@ process.stdin.on("readable", function() {
 			case "/say hello":
 				process.stdout.write("hello!\n");
 				break;
-			case '/getOSinfo':
-				getOSinfo();
+			case "/getOSinfo":
+				OSInfo.print();
 				break;
-			case '/get '		
+			case "/convertSeconds":
+				getTimeConverter.print();
+				break;
 			default:
 				process.stderr.write("Wrong instruction!\n");
-		};
+		}
 	}
 });

@@ -1,6 +1,5 @@
-function getTimeConverter() {
-	var timeSeconds = require("os").uptime();
-
+function getTimeConverter(timeSeconds) {
+	
 	var hours = Math.floor(timeSeconds / 3600);
 	var minutes = Math.floor((timeSeconds % 3600) / 60);
 	var seconds = Math.floor((timeSeconds % 3600) % 60);
