@@ -2,7 +2,7 @@ function getTimeConverter(timeSeconds) {
 	
 	var hours = Math.floor(timeSeconds / 3600);
 	var minutes = Math.floor((timeSeconds % 3600) / 60);
-	var seconds = Math.floor((timeSeconds % 3600) % 60);
+	var seconds = Math.floor((timeSeconds % 60));
 
 	//Convert seconds to minutes:seconds
 
@@ -18,9 +18,9 @@ function getTimeConverter(timeSeconds) {
 		"Hours: " + hours + " Minutes: " + minutes + " Seconds: " + seconds;
 
 	if (timeSeconds < 3600) {
-		console.log(timeMinutes);
+		return timeMinutes;
 	} else {
-		console.log(timeHours);
+		return timeHours;
 	}
 }
 

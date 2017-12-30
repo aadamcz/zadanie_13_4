@@ -1,4 +1,4 @@
-//var getTimeConverter = require("./getTimeConverter");
+var getTimeConverter = require("./getTimeConverter");
 var os = require('os');
 
 function getOSinfo() {
@@ -10,14 +10,19 @@ function getOSinfo() {
 	}
 	var release = os.release();
 	var cpu = os.cpus()[0].model;
+	var uptime = os.uptime();
 
 	var userInfo = os.userInfo();
 	console.log("System:", type);
 	console.log("Release:", release);
 	console.log("CPU model:", cpu);
-	//console.log("Time converter:", getTimeConverter.print());
 	console.log("User name:", userInfo.username);
 	console.log("Home dir:", userInfo.homedir);
+	console.log(getTimeConverter.print(uptime));
 }
 
+getOSinfo();
+
 exports.print = getOSinfo;
+
+
