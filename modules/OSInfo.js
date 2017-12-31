@@ -21,8 +21,6 @@ function getOSinfo() {
 	console.log(getTimeConverter.print(uptime));
 }
 
-getOSinfo();
-
 exports.print = getOSinfo;
 
 
